@@ -19,9 +19,15 @@
     const nav = document.querySelector('.nav');
     if (!nav) return;
 
-    // Clear existing auth links
-    const existingAuthLinks = nav.querySelectorAll('.auth-link');
-    existingAuthLinks.forEach(link => link.remove());
+    // Clear ALL existing links (except "Arrangementer")
+    const allLinks = Array.from(nav.children);
+    allLinks.forEach(element => {
+      // Keep the "Arrangementer" link, remove everything else
+      const text = element.textContent?.trim();
+      if (text !== 'Arrangementer' && !text.includes('Arrangementer')) {
+        element.remove();
+      }
+    });
 
     if (token && user) {
       // User is logged in - show user name and logout
