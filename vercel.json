@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/api/events/parse-url",
-      "destination": "/api/events/parse-url"
+      "destination": "/api/parse-url"
     },
     {
       "source": "/api/images/generate",
