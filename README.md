@@ -21,6 +21,7 @@ evHenter helps users discover and organize events through an intuitive web platf
 - **Database**: PostgreSQL (Vercel Postgres)
 - **Storage**: Vercel Blob Storage
 - **AI**: OpenAI (GPT-4 for parsing, DALL-E 3 for images)
+- **Analytics**: Vercel Analytics (Web Vitals + Custom Events)
 - **Hosting**: Vercel
 - **Source Control**: GitHub
 

@@ -39,10 +39,11 @@
     "npm": ">=9.0.0"
   },
   "dependencies": {
-    "openai": "^4.67.3",
-    "pg": "^8.13.1",
+    "@vercel/analytics": "^1.5.0",
+    "bcryptjs": "^2.4.3",
     "jose": "^5.9.6",
-    "bcryptjs": "^2.4.3"
+    "openai": "^4.67.3",
+    "pg": "^8.13.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.2",
