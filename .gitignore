@@ -54,3 +54,5 @@ logs/
 *~
 *.bak
 *.backup
+
+.vercel
