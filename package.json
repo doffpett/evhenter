@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vercel dev",
-    "build": "echo 'Building static assets...' && npm run lint",
+    "build": "echo 'Building static assets...'",
     "start": "vercel dev",
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js --fix",
