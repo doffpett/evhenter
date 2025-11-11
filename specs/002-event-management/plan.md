@@ -971,33 +971,43 @@ jobs:
 
 ## Open Questions & Decisions
 
+### ✅ RESOLVED - See decisions.md for full details
+
+All key technical decisions have been made and documented in [decisions.md](decisions.md).
+
 ### Immediate (Phase 0)
 1. ✅ **Hosting**: Vercel confirmed
 2. ✅ **Source control**: GitHub confirmed
 3. ✅ **Frontend approach**: Vanilla HTML/CSS/JS confirmed
 4. ✅ **AI provider**: OpenAI confirmed
-5. ❓ **Database choice**: Vercel Postgres or external (Supabase, Railway)?
-6. ❓ **Authentication**: JWT only or OAuth providers (Google, GitHub)?
-7. ❓ **Domain name**: Do you have a domain for evHenter?
-8. ❓ **Email service**: Needed for notifications? (SendGrid, Resend, etc.)
+5. ✅ **Database choice**: Vercel Postgres
+6. ✅ **Authentication**: Email/Password + Vercel Auth (OAuth for Google, GitHub)
+7. ✅ **Domain name**: evHenter.ai
+8. ⚠️ **Email service**: TBD (Phase 4 - SendGrid or Resend for notifications)
 
 ### Phase 1
-9. ❓ **CSS approach**: Pure custom CSS or minimal utility classes?
-10. ❓ **Date picker**: Native HTML5 or custom calendar widget?
-11. ❓ **Image placeholders**: Generic or custom illustrated placeholders?
+9. ✅ **CSS approach**: Custom CSS with CSS Variables (theme: indigo/purple/pink)
+10. ✅ **Date picker**: Native HTML5 `<input type="date">`
+11. ✅ **Image placeholders**: Custom illustrated placeholders per event type
 
 ### Phase 3
-12. ❓ **OpenAI models**: GPT-4 vs GPT-4-turbo (cost vs speed)?
-13. ❓ **DALL-E version**: DALL-E 3 (quality) or DALL-E 2 (cost)?
-14. ❓ **Background jobs**: In-memory queue or external (BullMQ + Redis)?
+12. ✅ **OpenAI models**: GPT-4 Turbo (balance of speed/cost/quality)
+13. ✅ **DALL-E version**: DALL-E 3 (quality over cost)
+14. ✅ **Background jobs**: In-memory queue (MVP) → BullMQ + Vercel KV (Scale)
 
 ### Phase 4
-15. ❓ **Moderation start**: Community approval from launch or moderator-only initially?
-16. ❓ **Reputation algorithm**: Simple count or weighted by event quality?
+15. ✅ **Moderation start**: Moderator-only initially → Community approval in Phase 4
+16. ✅ **Reputation algorithm**: Simple count (Phase 4) → Weighted by quality (Phase 5+)
 
 ### Phase 5
-17. ❓ **Analytics**: Self-hosted (Plausible) or Vercel Analytics?
-18. ❓ **Error tracking**: Sentry, LogRocket, or Vercel Logs only?
+17. ✅ **Analytics**: Plausible Analytics (privacy-friendly)
+18. ✅ **Error tracking**: Sentry (generous free tier)
+
+### Cost Projections (Monthly)
+- Infrastructure (Vercel): $0-44
+- AI Services (OpenAI): $25-50
+- Monitoring: $0-9
+- **Total**: $30-100/month
 
 ## Next Steps
 
