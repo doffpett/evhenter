@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "context7": {
+      "url": "https://mcp.context7.com/mcp",
+      "apiKey": "ctx7sk-564144a7-b07e-4fc7-b5ae-258222f88a1d",
+      "transport": "sse"
+    }
+  }
+}
