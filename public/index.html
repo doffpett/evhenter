@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="evHenter - Oppdag lokale arrangementer med AI-drevet søk og filtrering">
+  <meta name="keywords" content="arrangementer, events, Oslo, Norge, community, AI">
+  <meta name="author" content="evHenter">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://evhenter.ai">
+  <meta property="og:title" content="evHenter - Community Event Discovery">
+  <meta property="og:description" content="Oppdag, filtrer og delta på lokale arrangementer">
+  <meta property="og:image" content="/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <title>evHenter - Oppdag Arrangementer</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+
+  <style>
+    /* Critical CSS for above-the-fold content */
+    :root {
+      --color-primary: #6366f1;
+      --color-secondary: #8b5cf6;
+      --color-accent: #ec4899;
+      --color-bg: #ffffff;
+      --color-text: #111827;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .status {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to main content (accessibility) -->
+  <a href="#main-content" class="skip-link">Hopp til hovedinnhold</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <h1>evHenter<span class="domain">.ai</span></h1>
+      </div>
+      <nav class="nav">
+        <a href="/">Arrangementer</a>
+        <a href="/auth.html">Logg inn</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Velkommen til evHenter</h1>
+      <p>Oppdag arrangementer i ditt område</p>
+      <p><small>Phase 0 - Setup Complete 🚀</small></p>
+    </section>
+
+    <!-- Status Section -->
+    <section class="status">
+      <h2>System Status</h2>
+      <div id="api-status">
+        <p>Sjekker API status...</p>
+      </div>
+    </section>
+
+    <!-- Coming Soon -->
+    <section class="container" style="padding: 2rem 1rem;">
+      <h2>Kommer Snart</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li>✅ Project Setup</li>
+        <li>✅ Vercel Configuration</li>
+        <li>⏳ Database Schema</li>
+        <li>⏳ Event Browsing & Filtering</li>
+        <li>⏳ Event Details</li>
+        <li>⏳ User Authentication</li>
+        <li>⏳ Event Submission</li>
+        <li>⏳ AI URL Parsing</li>
+        <li>⏳ AI Image Generation</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 evHenter.ai - Community Event Discovery Platform</p>
+      <p>
+        <a href="https://github.com/doffpett/evhenter">GitHub</a> |
+        <a href="/api/health">API Status</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Check API health on page load
+    async function checkAPIHealth() {
+      const statusEl = document.getElementById('api-status');
+
+      try {
+        const response = await fetch('/api/health');
+        const data = await response.json();
+
+        if (data.status === 'healthy') {
+          statusEl.innerHTML = `
+            <div style="color: #10b981;">
+              <p><strong>✅ API Status: ${data.status}</strong></p>
+              <p><small>Environment: ${data.environment}</small></p>
+              <p><small>Version: ${data.version}</small></p>
+              <ul style="list-style: none; padding: 0; margin-top: 0.5rem;">
+                <li>🔌 API: ${data.services.api}</li>
+                <li>🗄️ Database: ${data.services.database}</li>
+                <li>🤖 OpenAI: ${data.services.openai}</li>
+                <li>📦 Storage: ${data.services.storage}</li>
+              </ul>
+            </div>
+          `;
+        } else {
+          statusEl.innerHTML = `
+            <div style="color: #ef4444;">
+              <p><strong>⚠️ API Status: ${data.status}</strong></p>
+            </div>
+          `;
+        }
+      } catch (error) {
+        statusEl.innerHTML = `
+          <div style="color: #ef4444;">
+            <p><strong>❌ API Unavailable</strong></p>
+            <p><small>${error.message}</small></p>
+            <p><small>Kjør: npm run dev</small></p>
+          </div>
+        `;
+      }
+    }
+
+    // Run on page load
+    checkAPIHealth();
+  </script>
+</body>
+</html>

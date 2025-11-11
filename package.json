@@ -1,0 +1,55 @@
+{
+  "name": "evhenter",
+  "version": "0.1.0",
+  "description": "Community Event Discovery Platform - Browse, filter, and discover local events with AI-powered features",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Building static assets...' && npm run lint",
+    "start": "vercel dev",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "format": "prettier --write \"**/*.{js,json,css,md}\"",
+    "test": "node --test tests/unit/**/*.test.js",
+    "test:integration": "node --test tests/integration/**/*.test.js",
+    "test:e2e": "playwright test",
+    "test:watch": "node --test --watch tests/unit/**/*.test.js",
+    "db:setup": "node lib/db/setup.js",
+    "db:migrate": "node lib/db/migrate.js",
+    "db:seed": "node lib/db/seed.js",
+    "vercel:deploy": "vercel --prod",
+    "vercel:preview": "vercel"
+  },
+  "keywords": [
+    "events",
+    "community",
+    "discovery",
+    "ai",
+    "openai",
+    "vercel"
+  ],
+  "author": "@doffpett",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doffpett/evhenter.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "openai": "^4.67.3",
+    "pg": "^8.13.1",
+    "jose": "^5.9.6",
+    "bcryptjs": "^2.4.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@vercel/node": "^3.2.23",
+    "eslint": "^9.14.0",
+    "eslint-config-standard": "^17.1.0",
+    "prettier": "^3.3.3",
+    "vercel": "^37.14.0"
+  }
+}
