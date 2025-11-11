@@ -11,11 +11,11 @@
     },
     {
       "source": "/event/(.*)",
-      "destination": "/public/event-detail.html"
+      "destination": "/event-detail.html"
     },
     {
       "source": "/",
-      "destination": "/public/index.html"
+      "destination": "/index.html"
     },
     {
       "source": "/(.*)",
