@@ -37,7 +37,7 @@ async function test() {
     console.log('   URL: https://www.bergen-chamber.no/arrangementer/samarbeid-med-startups/');
     console.log('   This may take 10-15 seconds...\n');
 
-    const parseResponse = await fetch('https://evhenter.vercel.app/api/events/parse-url', {
+    const parseResponse = await fetch('https://evhenter.vercel.app/api/parse-url', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

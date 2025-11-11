@@ -1,11 +1,11 @@
 /**
  * Parse Event from URL Endpoint
- * POST /api/events/parse-url
+ * POST /api/parse-url
  * Uses AI to extract event information from a URL
  */
 
-import { requireAuth } from '../../lib/middleware/auth.js';
-import { parseEventFromUrl } from '../../lib/services/ai-service.js';
+import { requireAuth } from '../lib/middleware/auth.js';
+import { parseEventFromUrl } from '../lib/services/ai-service.js';
 
 export default async function handler(req, res) {
   // Only allow POST requests

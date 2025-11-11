@@ -2,14 +2,6 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/api/events/parse-url",
-      "destination": "/api/parse-url"
-    },
-    {
-      "source": "/api/images/generate",
-      "destination": "/api/images/generate"
-    },
-    {
       "source": "/api/events/:id",
       "destination": "/api/events/[id]"
     },
