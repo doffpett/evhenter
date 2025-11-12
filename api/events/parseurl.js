@@ -1,6 +1,6 @@
 /**
  * Parse Event from URL Endpoint
- * POST /api/parse-url
+ * POST /api/events/parseurl
  * Uses AI to extract event information from a URL
  */
 
@@ -84,4 +84,3 @@ export default async function handler(req, res) {
     });
   });
 }
-// Test deployment
