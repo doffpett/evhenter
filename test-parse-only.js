@@ -7,7 +7,7 @@ async function test() {
     console.log('   URL: https://www.bergen-chamber.no/arrangementer/samarbeid-med-startups/');
     console.log('   This may take 10-15 seconds...\n');
 
-    const res = await fetch('https://evhenter.vercel.app/api/events/ai-parse', {
+    const res = await fetch('https://evhenter.vercel.app/api/ai/parse', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
